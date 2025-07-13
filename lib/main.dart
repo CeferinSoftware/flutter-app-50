@@ -11,12 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter WebView Template',
+      title: 'PokeWoke',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(33, 150, 243, 1)),
         useMaterial3: true,
       ),
       home: const WebViewScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -46,15 +47,16 @@ class _WebViewScreenState extends State<WebViewScreen> {
           },
         ),
       )
-      ..loadRequest(Uri.parse('https://example.com'));
+      ..loadRequest(Uri.parse('https://pokewoke.store'));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Flutter WebView Template'),
+        title: Text('PokeWoke'),
+        backgroundColor: Color.fromRGBO(33, 150, 243, 1),
+        foregroundColor: Colors.white,
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
